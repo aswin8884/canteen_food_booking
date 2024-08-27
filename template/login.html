@@ -1,0 +1,38 @@
+{% extends 'common_base.html' %}
+{% block content %}
+<section class="home-slider owl-carousel">
+    <div class="slider-item" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text justify-content-center align-items-center">
+                <div class="col-md-7 col-sm-12 text-center ftco-animate">
+                    <h1 class="mb-3 mt-5 bread"><a href="#user_login">Login</a></h1>
+
+                    <!-- <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> <span>User Registration</span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section contact-section" id="user_login">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 ftco-animate">
+                <form method="post" enctype="multipart/form-data" class="contact-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" style="margin-left: 180px;" class="btn btn-primary py-3 px-5">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

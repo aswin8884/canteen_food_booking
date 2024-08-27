@@ -1,0 +1,63 @@
+{% extends 'common_base.html' %}
+{% block content %}
+<section class="home-slider owl-carousel">
+    <div class="slider-item" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text justify-content-center align-items-center">
+                <div class="col-md-7 col-sm-12 text-center ftco-animate">
+                    <h1 class="mb-3 mt-5 bread">User</h1>
+                    <p class="breadcrumbs"><a href="#user_registration"><span>Registration</span></p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section contact-section" id="user_registration">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 ftco-animate">
+                <form method="post" enctype="multipart/form-data" class="contact-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="contact" class="form-control" placeholder="Your Number">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="address" id="" cols="30" rows="7" class="form-control" placeholder="Address"></textarea>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="usertype">User Type</label>
+                        <select name="usertype" id="usertype" class="form-control">
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="staff">Staff</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile_picture">Profile Picture</label>
+                        <input type="file" name="profile_picture" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_proof">ID Card (Picture)</label>
+                        <input type="file" name="id_card" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Register" style="margin-left: 180px;" class="btn btn-primary py-3 px-5">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
