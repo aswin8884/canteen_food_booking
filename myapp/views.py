@@ -106,5 +106,10 @@ def staff_registration(request):
 
 
 ####################### ADMIN ############################
+
+def admin_home(request):
+
+    return render(request,"admin/admin_home.html")
+
 ####################### STAFF ############################
 ####################### USER ############################
